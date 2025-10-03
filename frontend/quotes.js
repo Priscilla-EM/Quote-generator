@@ -4,7 +4,9 @@ const newQuoteButton = document.getElementById("new-quote");
 
 async function pickRandomQuote() {
   try {
-    const response = await fetch("http://127.0.0.1:3000/");
+    const response = await fetch(
+      "https://priscilla-quote-generator-backend.hosting.codeyourfuture.io"
+    );
     const randomObject = await response.json();
     quoteEl.innerText = randomObject.quote;
     authorEl.innerText = randomObject.author;
